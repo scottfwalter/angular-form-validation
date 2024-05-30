@@ -1,0 +1,14 @@
+<form #myForm="ngForm">
+  <input name="myname" required [(ngModel)]="myname" #myNameField="ngModel" />
+  {{ myNameField.errors | json }}
+</form>
+
+<button (click)="invalidatenNameField()">Invalidate Name Field</button>
+
+<button (click)="logFormObject()">Log Form Object</button>
+
+<h2>Form</h2>
+{{ myForm.status }}
+
+<h2>Name Field</h2>
+{{ myNameField.status }}
